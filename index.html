@@ -1,12 +1,367 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-
-  <meta charset="UTF-8">
-    <title>        </title>
-    <meta http-equiv="refresh" content="0;url=https://bingbook.cn
-">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>锦屏隆里 - 千年古镇，文化瑰宝</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f8f4e9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x400') no-repeat center center;
+            background-size: cover;
+            height: 500px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 5px;
+        }
+        
+        .slogan {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        nav {
+            background-color: #8b1a1a;
+            padding: 15px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 5px 10px;
+            transition: all 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        
+        /* 主要内容区域 */
+        .intro {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #8b1a1a;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #8b1a1a;
+        }
+        
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        /* 特色区域 */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            flex-basis: calc(33.333% - 20px);
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            height: 200px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        
+        .feature-content {
+            padding: 20px;
+        }
+        
+        .feature-content h3 {
+            color: #8b1a1a;
+            margin-bottom: 10px;
+        }
+        
+        /* 文化展示 */
+        .culture {
+            background-color: #f0e6d3;
+            padding: 60px 0;
+        }
+        
+        .culture h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #8b1a1a;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .culture-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .culture-img {
+            height: 250px;
+            background-color: #ddd;
+        }
+        
+        .culture-content {
+            padding: 20px;
+        }
+        
+        /* 底部 */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex-basis: 30%;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #f8f4e9;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .feature-card {
+                flex-basis: calc(50% - 15px);
+            }
+            
+            .culture-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-section {
+                flex-basis: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .feature-card {
+                flex-basis: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container">
+            <h1 class="logo">锦屏隆里</h1>
+            <p class="slogan">千年古镇，文化瑰宝</p>
+        </div>
+    </header>
+    
+    <!-- 导航菜单 -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">古镇历史</a></li>
+                <li><a href="#">文化特色</a></li>
+                <li><a href="#">旅游指南</a></li>
+                <li><a href="#">民俗活动</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- 主要内容 -->
+    <main>
+        <!-- 简介部分 -->
+        <section class="intro">
+            <div class="container">
+                <h2>欢迎来到锦屏隆里</h2>
+                <p>锦屏隆里是一座具有千年历史的古镇，位于贵州省黔东南苗族侗族自治州锦屏县。这里保存着完好的明清古建筑群，独特的屯堡文化，以及丰富多彩的民族风情。</p>
+                <p>隆里古城始建于明洪武年间，是明代"调北征南"的重要军事屯堡，至今已有600多年的历史。古城设计精巧，布局严谨，被誉为"中原遗韵，南疆锦绣"。</p>
+            </div>
+        </section>
+        
+        <!-- 特色展示 -->
+        <section class="container">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #8b1a1a;">古镇特色</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-img"></div>
+                    <div class="feature-content">
+                        <h3>古建筑群</h3>
+                        <p>隆里古城保存有完整的明清时期建筑，包括城墙、民居、庙宇等，建筑风格融合了中原与地方特色。</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img"></div>
+                    <div class="feature-content">
+                        <h3>屯堡文化</h3>
+                        <p>作为明代军事屯堡，隆里保留着独特的屯堡文化，包括地戏、花灯舞等传统艺术形式。</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img"></div>
+                    <div class="feature-content">
+                        <h3>民族风情</h3>
+                        <p>隆里周边居住着苗族、侗族等多个少数民族，形成了丰富多彩的民族文化和节庆活动。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 文化展示 -->
+        <section class="culture">
+            <div class="container">
+                <h2>文化传承</h2>
+                <div class="culture-grid">
+                    <div class="culture-item">
+                        <div class="culture-img"></div>
+                        <div class="culture-content">
+                            <h3>隆里花灯舞</h3>
+                            <p>隆里花灯舞是当地重要的民间艺术形式，融合了汉族与少数民族的文化元素，每年春节期间表演，吸引众多游客。</p>
+                        </div>
+                    </div>
+                    <div class="culture-item">
+                        <div class="culture-img"></div>
+                        <div class="culture-content">
+                            <h3>传统节庆</h3>
+                            <p>隆里保留着丰富的传统节庆活动，如元宵灯会、端午龙舟、中秋祭月等，展现了浓厚的地方文化特色。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <p>地址：贵州省黔东南苗族侗族自治州锦屏县隆里古城</p>
+                    <p>电话：0855-XXXXXXX</p>
+                    <p>邮箱：mail@bingbook.cn</p>
+                </div>
+                <div class="footer-section">
+                    <h3>开放时间</h3>
+                    <p>全年开放：08:00 - 18:00</p>
+                    <p>节假日照常开放</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <p>微信公众号：冰书社</p>
+                    
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 锦屏隆里古城 版权所有</p>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // 15秒后自动跳转
+        setTimeout(function() {
+            window.location.href = "https://bingbook.cn";
+        }, 15000); // 15000毫秒 = 15秒
+    </script>
 </body>
-</html>
+</html> 
